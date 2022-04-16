@@ -8,7 +8,7 @@
     <string name="action_settings">Settings</string>
 
     <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
+    <string name="menu_my_status">Working Status</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="agree_privacy_policy">I agree to the privacy policy.</string>
     <string name="next_text">Next</string>
@@ -24,5 +24,9 @@
     <string name="otp_empty_field_msg">One or more digits of the otp are missing.Please try again.</string>
     <string name="otp_mismatch_msg">The otp entered is incorrect.Login Failed.</string>
     <string name="verify_button_text">VERIFY</string>
+    <string name="working_msg">Working</string>
+    <string name="not_working_msg">Not Working</string>
+    <string name="save_button_text">Save</string>
+    <string name="working_status_text">Update your working status.</string>
 
 </resources>
