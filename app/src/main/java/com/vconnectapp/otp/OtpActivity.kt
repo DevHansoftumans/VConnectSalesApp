@@ -1,9 +1,9 @@
 package com.vconnectapp.otp
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.doAfterTextChanged
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
@@ -52,6 +52,9 @@ class OtpActivity : AppCompatActivity() {
             }
         }
     }
+
+
+
 
     private fun navigateToMainActivity() {
         val intent = Intent(this@OtpActivity, MainActivity::class.java)
