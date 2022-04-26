@@ -9,12 +9,14 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.vconnectapp.R
 import com.vconnectapp.databinding.FragmentHomeBinding
 import com.vconnectapp.utils.LocationUtility
 import pub.devrel.easypermissions.AppSettingsDialog
 import pub.devrel.easypermissions.EasyPermissions
 
-class HomeFragment : Fragment(), EasyPermissions.PermissionCallbacks, EasyPermissions.RationaleCallbacks{
+class HomeFragment : Fragment(), EasyPermissions.PermissionCallbacks,
+    EasyPermissions.RationaleCallbacks {
 
     private var _binding: FragmentHomeBinding? = null
 
@@ -52,7 +54,7 @@ class HomeFragment : Fragment(), EasyPermissions.PermissionCallbacks, EasyPermis
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q) {
             EasyPermissions.requestPermissions(
                 this,
-                "You need to accept location permissions for all the time to use this app.",
+                getString(R.string.locationRationale),
                 10,
                 Manifest.permission.ACCESS_COARSE_LOCATION,
                 Manifest.permission.ACCESS_FINE_LOCATION
@@ -60,7 +62,7 @@ class HomeFragment : Fragment(), EasyPermissions.PermissionCallbacks, EasyPermis
         } else {
             EasyPermissions.requestPermissions(
                 this,
-                "You need to accept location permissions for all the time to use this app.",
+                getString(R.string.locationRationale),
                 10,
                 Manifest.permission.ACCESS_COARSE_LOCATION,
                 Manifest.permission.ACCESS_FINE_LOCATION,

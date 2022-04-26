@@ -15,9 +15,9 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:titleTextColor="@color/black"
-            app:popupTheme="@style/Theme.VConnectApp.PopupOverlay" />
+            android:background="@color/teal_700"
+            app:popupTheme="@style/Theme.VConnectApp.PopupOverlay"
+            app:titleTextColor="@color/black" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
