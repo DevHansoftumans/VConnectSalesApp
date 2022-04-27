@@ -13,13 +13,13 @@
 
     <fragment
         android:id="@+id/nav_my_status"
-        android:name="com.vconnectapp.ui.gallery.MyStatusFragment"
+        android:name="com.vconnectapp.ui.mystatus.MyStatusFragment"
         android:label="@string/menu_my_status"
         tools:layout="@layout/fragment_my_status" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.vconnectapp.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_visits"
+        android:name="com.vconnectapp.ui.visits.VisitsFragment"
+        android:label="@string/menu_visits"
+        tools:layout="@layout/fragment_visits" />
 </navigation>
