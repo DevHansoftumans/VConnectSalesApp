@@ -111,6 +111,34 @@
                         android:textColor="@color/grey_90"
                         android:textStyle="bold" />
 
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/otp_field_five"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:maxLength="1"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                        android:textColor="@color/grey_90"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/otp_field_six"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:maxLength="1"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                        android:textColor="@color/grey_90"
+                        android:textStyle="bold" />
+
                 </LinearLayout>
 
                 <androidx.appcompat.widget.AppCompatButton

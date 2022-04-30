@@ -3,7 +3,11 @@ package com.vconnectapp.login
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.PhoneAuthOptions
+import com.google.firebase.auth.PhoneAuthProvider
 import com.vconnectapp.R
+import java.util.concurrent.TimeUnit
 
 class LoginViewModel : ViewModel() {
     private val _mutableValidationErrors = MutableLiveData<Map<String, Int>>()
@@ -11,9 +15,6 @@ class LoginViewModel : ViewModel() {
 
     private val _mutableResetAndTriggerCheck = MutableLiveData<Boolean>()
     val resetAndTriggerCheck: LiveData<Boolean> = _mutableResetAndTriggerCheck
-
-    private val _mutableIsSuccessfulLogin = MutableLiveData<Boolean>()
-    val isSuccessfulLogin: LiveData<Boolean> = _mutableIsSuccessfulLogin
 
     companion object ValidationKeys {
         const val PHONE_NUMBER_EMPTY = "phone_number_empty"
@@ -45,9 +46,5 @@ class LoginViewModel : ViewModel() {
         } else {
             _mutableResetAndTriggerCheck.value = true
         }
-    }
-
-    fun triggerPhoneNumberServerSideCheck(phoneNumber: String) {
-        _mutableIsSuccessfulLogin.value = phoneNumber == "7349090397"
     }
 }

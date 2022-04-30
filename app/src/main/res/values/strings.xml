@@ -28,6 +28,9 @@
     <string name="not_working_msg">Not Working</string>
     <string name="save_button_text">Save</string>
     <string name="working_status_text">Update your working status.</string>
+    <string name="ready_to_login_text">Ready to login...</string>
+    <string name="failed_login_text">You are not allowed to login.Please contact the administrator.</string>
+    <string name="unregistered_user_login">Unable to login.Please contact the administrator</string>
     <string name="locationRationale">You need to accept location permissions for all the time to use this app.</string>
     <string name="customer_name_hint">Enter the name of the customer</string>
     <string name="customer_number_hint">Enter the phone number of the customer</string>
