@@ -11,6 +11,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="red">#FFFF0000</color>
     <color name="yellow">#FFFFFF00</color>
+    <color name="blue_light">#1976D2</color>
+    <color name="blue_light_two">#1E88E5</color>
 
     <color name="grey_3">#f7f7f7</color>
     <color name="grey_5">#f2f2f2</color>

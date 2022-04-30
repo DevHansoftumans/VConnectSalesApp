@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">VConnect-Sales-App</string>
+    <string name="app_name">We-Connect-Sales</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -9,7 +9,7 @@
 
     <string name="menu_home">Home</string>
     <string name="menu_my_status">Working Status</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_visits">Visits</string>
     <string name="agree_privacy_policy">I agree to the privacy policy.</string>
     <string name="next_text">Next</string>
     <string name="phone_number_hint">Enter your registered phone number.</string>
@@ -18,7 +18,7 @@
     <string name="checkbox_unchecked_error_msg">Please accept the privacy policy.</string>
     <string name="phone_number_not_registered_error_msg">Unable to login.Please contact the admin.</string>
     <string name="mobile_title">What\'s your mobile number</string>
-    <string name="login_label">Login</string>
+    <string name="login_label">We-Connect-Sales</string>
     <string name="otp_label">OTP Verification</string>
     <string name="otp_title_msg">OTP has been sent to you on your mobile phone. Please enter it below</string>
     <string name="otp_empty_field_msg">One or more digits of the otp are missing.Please try again.</string>
@@ -31,5 +31,28 @@
     <string name="ready_to_login_text">Ready to login...</string>
     <string name="failed_login_text">You are not allowed to login.Please contact the administrator.</string>
     <string name="unregistered_user_login">Unable to login.Please contact the administrator</string>
+    <string name="locationRationale">You need to accept location permissions for all the time to use this app.</string>
+    <string name="customer_name_hint">Enter the name of the customer</string>
+    <string name="customer_number_hint">Enter the phone number of the customer</string>
+    <string name="product">Products</string>
+    <string name="led">LED</string>
+    <string name="cctv">CCTV</string>
+    <string name="projector">PROJECTOR</string>
+    <string name="quantity">Quantity</string>
+    <string name="very_interested">Very Interested</string>
+    <string name="interested_needs_follow_up">Interested - Needs Follow Up</string>
+    <string name="not_interested">Not Interested</string>
+    <string name="sales_done">Sales done?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="comments">Comments</string>
+    <string name="capture_selfie">Capture Selfie</string>
+    <string name="selfie_plus">+</string>
+    <string name="use_current_location">USE CURRENT LOCATION</string>
+    <string name="back">Back</string>
+    <string name="next">Next</string>
+    <string name="location">Location</string>
+    <string name="responseTop">Response</string>
+    <string name="details">Details</string>
 
 </resources>
