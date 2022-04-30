@@ -7,53 +7,55 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center_vertical"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
+        android:padding="8dp">
 
         <TextView
             android:id="@+id/responseTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/response"
-            android:textStyle="bold"
+            android:text="@string/responseTop"
             android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-        <LinearLayout
-            android:id="@+id/responseContainer"
-            android:layout_width="match_parent"
+        <RadioGroup
+            android:id="@+id/radioResponseGroup"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:orientation="vertical">
 
-            <RadioGroup
-                android:id="@+id/radioResponseGroup"
+            <RadioButton
+                android:id="@+id/veryInterested"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="20dp">
+                android:layout_height="match_parent"
+                android:text="@string/very_interested" />
 
-                <RadioButton
-                    android:id="@+id/veryInterested"
-                    android:layout_width="wrap_content"
-                    android:layout_height="33dp"
-                    android:text="@string/very_interested" />
+            <RadioButton
+                android:id="@+id/followUp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/interested_needs_follow_up" />
 
-                <RadioButton
-                    android:id="@+id/followUp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="33dp"
-                    android:text="@string/interested_needs_follow_up" />
+            <RadioButton
+                android:id="@+id/notInterested"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/not_interested" />
+        </RadioGroup>
 
-                <RadioButton
-                    android:id="@+id/notInterested"
-                    android:layout_width="wrap_content"
-                    android:layout_height="33dp"
-                    android:text="@string/not_interested" />
-            </RadioGroup>
-        </LinearLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/CommentstextField"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:hint="@string/comments">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
             android:id="@+id/salesTV"
@@ -61,47 +63,32 @@
             android:layout_height="wrap_content"
             android:text="@string/sales_done"
             android:textColor="@color/black"
-            android:textStyle="bold"
-            android:textSize="18sp" />
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <RadioGroup
             android:id="@+id/radioResponse"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="10dp"
+            android:background="@color/grey_10"
             android:gravity="center"
-            android:background="@color/grey_10">
+            android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/yesBtn"
                 android:layout_width="wrap_content"
-                android:layout_height="33dp"
+                android:layout_height="match_parent"
                 android:layout_marginEnd="5dp"
-                android:text="@string/yes" />
+                android:text="@string/yes"
+                android:layout_weight="1"/>
 
             <RadioButton
                 android:id="@+id/noBtn"
                 android:layout_width="wrap_content"
-                android:layout_height="33dp"
-                android:text="@string/no" />
+                android:layout_height="match_parent"
+                android:text="@string/no"
+                android:layout_weight="1"/>
 
         </RadioGroup>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/CommentstextField"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:hint="@string/comments"
-            android:layout_marginTop="20dp">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

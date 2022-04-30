@@ -1,4 +1,4 @@
-package com.vconnectapp.ui.slideshow
+package com.vconnectapp.ui.visits
 
 import android.graphics.Color
 import android.os.Bundle
@@ -7,14 +7,15 @@ import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.vconnectapp.databinding.FragmentSlideshowBinding
+import com.vconnectapp.databinding.FragmentVisitsBinding
+import com.vconnectapp.utils.CheckpointsUtility.CHECKPOINT_1
+import com.vconnectapp.utils.CheckpointsUtility.CHECKPOINT_2
+import com.vconnectapp.utils.CheckpointsUtility.CHECKPOINT_3
 
-class SlideshowFragment : Fragment() {
-
-    private var _binding: FragmentSlideshowBinding? = null
+class VisitsFragment : Fragment() {
+    private var _binding: FragmentVisitsBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -25,22 +26,22 @@ class SlideshowFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val slideshowViewModel =
-            ViewModelProvider(this).get(SlideshowViewModel::class.java)
+        val visitsViewModel =
+            ViewModelProvider(this).get(VisitsViewModel::class.java)
 
-        _binding = FragmentSlideshowBinding.inflate(inflater, container, false)
+        _binding = FragmentVisitsBinding.inflate(inflater, container, false)
         val root: View = binding.root
+//        val textView: TextView = binding.textSlideshow
+//        visitsViewModel.text.observe(viewLifecycleOwner) {
+//            textView.text = it
+//        }
 
-        val textView: TextView = binding.textSlideshow
-        slideshowViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
         return root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var stateCounter = 1
+        var stateCounter: Int = CHECKPOINT_1
 
         with(binding) {
             nextBtn.setOnClickListener {
@@ -52,13 +53,40 @@ class SlideshowFragment : Fragment() {
                 --stateCounter
                 refreshScreen(stateCounter)
             }
+
+            checkpoint1.ledCheckbox.setOnCheckedChangeListener{
+                    _, isChecked ->
+                if(isChecked){
+                    checkpoint1.ledQuantity.visibility = VISIBLE
+                }else{
+                    checkpoint1.ledQuantity.visibility = GONE
+                }
+            }
+
+            checkpoint1.cctvCheckbox.setOnCheckedChangeListener{
+                    _, isChecked ->
+                if(isChecked){
+                    checkpoint1.cctvQuantity.visibility = VISIBLE
+                }else{
+                    checkpoint1.cctvQuantity.visibility = GONE
+                }
+            }
+
+            checkpoint1.projCheckbox.setOnCheckedChangeListener{
+                    _, isChecked ->
+                if(isChecked){
+                    checkpoint1.projQuantity.visibility = VISIBLE
+                }else{
+                    checkpoint1.projQuantity.visibility = GONE
+                }
+            }
         }
     }
 
 
-    private fun refreshScreen(counter: Int) {
-        when (counter) {
-            1 -> {
+    private fun refreshScreen(stateCounter: Int) {
+        when (stateCounter) {
+            CHECKPOINT_1 -> {
                 with(binding) {
                     checkpoint1.root.visibility = VISIBLE
                     checkpoint2.root.visibility = GONE
@@ -70,7 +98,7 @@ class SlideshowFragment : Fragment() {
                     nextBtn.isEnabled = true
                 }
             }
-            2 -> {
+            CHECKPOINT_2 -> {
                 with(binding) {
                     checkpoint1.root.visibility = GONE
                     checkpoint2.root.visibility = VISIBLE
@@ -82,7 +110,7 @@ class SlideshowFragment : Fragment() {
                     nextBtn.isEnabled = true
                 }
             }
-            3 -> {
+            CHECKPOINT_3 -> {
                 with(binding) {
                     checkpoint1.root.visibility = GONE
                     checkpoint2.root.visibility = GONE
