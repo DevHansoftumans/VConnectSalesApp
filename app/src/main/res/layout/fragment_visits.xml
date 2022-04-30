@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/parent_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:padding="5dp">
+
+        <LinearLayout
+            android:id="@+id/shipping_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@id/payment_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageDetails"
+                android:layout_width="@dimen/spacing_smlarge"
+                android:layout_height="@dimen/spacing_smlarge"
+                android:layout_gravity="center_horizontal"
+                android:background="@android:color/white"
+                android:src="@drawable/shape_round_outline_primary" />
+
+            <TextView
+                android:id="@+id/tvDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/spacing_mxlarge"
+                android:text="@string/details"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@color/grey_90" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/line_first"
+            android:layout_width="0dp"
+            android:layout_height="3dp"
+            android:layout_marginStart="@dimen/spacing_mxlarge"
+            android:background="@color/grey_10"
+            app:layout_constraintBottom_toBottomOf="@id/payment_layout"
+            app:layout_constraintEnd_toStartOf="@+id/payment_layout"
+            app:layout_constraintStart_toEndOf="@id/shipping_layout"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/payment_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="@id/confirm_layout"
+            app:layout_constraintStart_toEndOf="@id/shipping_layout"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageResponse"
+                android:layout_width="@dimen/spacing_smlarge"
+                android:layout_height="@dimen/spacing_smlarge"
+                android:layout_gravity="center_horizontal"
+                android:background="@android:color/white"
+                app:srcCompat="@drawable/shape_round_outline_primary" />
+
+            <TextView
+                android:id="@+id/tvResponse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/spacing_mxlarge"
+                android:text="@string/responseTop"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@color/grey_20" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/line_second"
+            android:layout_width="0dp"
+            android:layout_height="3dp"
+            android:layout_marginStart="@dimen/spacing_mxlarge"
+            android:background="@color/grey_10"
+            app:layout_constraintBottom_toBottomOf="@id/payment_layout"
+            app:layout_constraintEnd_toStartOf="@+id/confirm_layout"
+            app:layout_constraintStart_toEndOf="@id/payment_layout"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/confirm_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/payment_layout"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageLocation"
+                android:layout_width="@dimen/spacing_smlarge"
+                android:layout_height="@dimen/spacing_smlarge"
+                android:layout_gravity="center_horizontal"
+                android:background="@android:color/white"
+                app:srcCompat="@drawable/shape_round_outline_primary" />
+
+            <TextView
+                android:id="@+id/tvLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/spacing_mxlarge"
+                android:text="@string/location"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@color/grey_20" />
+        </LinearLayout>
+
+        <include
+            android:id="@+id/checkpoint_1"
+            layout="@layout/checkpoint_1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            app:layout_constraintTop_toBottomOf="@+id/guideline2"
+            tools:visibility="visible" />
+
+        <include
+            android:id="@+id/checkpoint_2"
+            layout="@layout/checkpoint_2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            app:layout_constraintTop_toBottomOf="@+id/guideline2"
+            app:layout_constraintVertical_bias="0.0"
+            tools:layout_editor_absoluteX="4dp"
+            tools:visibility="invisible" />
+
+        <include
+            android:id="@+id/checkpoint_3"
+            layout="@layout/checkpoint_3"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            app:layout_constraintTop_toBottomOf="@+id/guideline2" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_editor_absoluteX="1dp">
+
+            <Button
+                android:id="@+id/backBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:enabled="false"
+                android:text="@string/back"
+                tools:enabled="true" />
+
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="match_parent" />
+
+            <Button
+                android:id="@+id/nextBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/next" />
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.15" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
