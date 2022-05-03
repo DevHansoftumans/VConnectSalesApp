@@ -16,6 +16,9 @@ class LoginViewModel : ViewModel() {
     private val _mutableResetAndTriggerCheck = MutableLiveData<Boolean>()
     val resetAndTriggerCheck: LiveData<Boolean> = _mutableResetAndTriggerCheck
 
+    private val _mutableInternetConnectionLiveData = MutableLiveData<Boolean>()
+    val internetConnectionLiveData: LiveData<Boolean> = _mutableInternetConnectionLiveData
+
     companion object ValidationKeys {
         const val PHONE_NUMBER_EMPTY = "phone_number_empty"
         const val PHONE_NUMBER_INVALID = "phone_number_invalid"
@@ -46,5 +49,9 @@ class LoginViewModel : ViewModel() {
         } else {
             _mutableResetAndTriggerCheck.value = true
         }
+    }
+
+    fun checkInternetConnectivity(isInternetConnected: Boolean) {
+        _mutableInternetConnectionLiveData.value = isInternetConnected
     }
 }

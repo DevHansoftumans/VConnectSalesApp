@@ -23,8 +23,7 @@ import com.vconnectapp.login.LoginViewModel.ValidationKeys.CHECK_BOX_UNTICKED
 import com.vconnectapp.login.LoginViewModel.ValidationKeys.PHONE_NUMBER_EMPTY
 import com.vconnectapp.login.LoginViewModel.ValidationKeys.PHONE_NUMBER_INVALID
 import com.vconnectapp.otp.OtpActivity
-import java.util.concurrent.TimeUnit
-
+import com.vconnectapp.utils.ConnectivityUtil
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
@@ -44,9 +43,10 @@ class LoginActivity : AppCompatActivity() {
     private fun setNextButtonOnClickListener() {
         with(binding) {
             nextButton.setOnClickListener {
-                loginViewModel.validateViews(
-                    phoneNumberEditText.text.toString(),
-                    privacyPolicyCheckbox.isChecked
+                loginViewModel.checkInternetConnectivity(
+                    ConnectivityUtil.checkForInternet(
+                        applicationContext
+                    )
                 )
             }
         }
@@ -65,6 +65,19 @@ class LoginActivity : AppCompatActivity() {
                 if (it) {
                     resetViews()
                     triggerPhoneNumberServerSideCheck(binding.phoneNumberEditText.text.toString())
+                }
+            }
+
+            internetConnectionLiveData.observe(this@LoginActivity) {
+                if (it) {
+                    with(binding) {
+                        loginViewModel.validateViews(
+                            phoneNumberEditText.text.toString(),
+                            privacyPolicyCheckbox.isChecked
+                        )
+                    }
+                } else {
+                    Toast.makeText(applicationContext, getString(R.string.no_internet_text), LENGTH_LONG).show()
                 }
             }
         }
